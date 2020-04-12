@@ -1,0 +1,19 @@
+* 目的
+  从mysql的information_schema中读取表和表的字段的信息, 根据预定义的格式, 生成excel文档
+* 实现方法
+  - [2/2] 要生成一个excel文档
+    - [X] 生成一个数据库表的汇总sheet
+      - [X] 访问数据库, 在schema-info中查到表的信息
+      - [X] 写一个excel模版, 通过把信息写入模版的方式生成文档sheet页
+    - [X] 生成一些了的表的meta-info的sheet
+      - [X] 访问数据库, 在info中导出需要的数据
+        - [X] 确认需要的数据
+        - [X] 遍历多个表, 逐步生成数据
+      - [X] 写一个excel模版的sheet页
+      - [X] 用生成的数据把它填充起来
+* 用到的库
+  #+begin_src clojure
+    [org.clojure/java.jdbc "0.7.11"]
+    [mysql/mysql-connector-java "8.0.16"]
+    [com.infolace/excel-templates "0.3.3"]
+  #+end_src
