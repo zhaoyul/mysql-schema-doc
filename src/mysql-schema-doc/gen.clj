@@ -34,8 +34,8 @@
      4 (gen-table-data table-name)}
     ))
 (defn report-data []
-  {"tables" {5 (->> tables
-                    (map (fn [m] (conj (vals m) ",")) )
+  {"tables" {5 (->> (tables)
+                    (map (fn [m] (conj (vals m) nil)) )
                     vec)}
    "table" (individual-table-sheet-lst) })
 
